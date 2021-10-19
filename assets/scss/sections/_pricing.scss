@@ -1,0 +1,80 @@
+/* Pricing Section Style */
+.pricing{
+    &__block{
+        $border: 0.5px;
+        $radius: toRem(11);
+        border-radius: $radius;
+        margin-bottom: toRem(30);
+        @include tablet{
+            max-width: toRem(350);
+        }
+        &.active{
+            box-shadow: toRem(17) toRem(33) toRem(99) rgba($color-primary--light, $alpha: 0.26);
+        }
+        &__head,
+        &__body{
+            border-width: $border;
+            border-style: solid;
+        }
+        &__head{
+            padding: toRem(30) 0 toRem(50);
+            background-color: $color-white--700;
+            border-color: $color-white--700;
+            border-bottom-width: 0;
+            border-top-left-radius: $radius;
+            border-top-right-radius: $radius;
+            @include min-desktop{
+                padding: toRem(61) 0;
+            }
+        }
+        &__price,
+        &__access{
+            font-weight: 600;
+        }
+        &__price{
+            &__amount{
+                font-size: toRem(40);
+                @include min-tablet{
+                    font-size: toRem(60);
+                }
+            }
+            &__period{
+                font-size: toRem(14);
+                @include min-tablet{
+                    font-size: toRem(17);
+                }
+            }
+        }
+        &__access{
+            font-size: toRem(14);
+            margin-top: toRem(10);
+            @include min-tablet{
+                margin-top: toRem(20);
+                font-size: toRem(20);
+            }
+        }
+        &__recommended{
+            color: $color-primary--light;
+            font-weight: 500;
+        }
+        &__body{
+            border-color: rgba($color: #CFCDCD, $alpha: 0.7);
+            border-top-width: 0;
+            border-bottom-left-radius: $radius;
+            border-bottom-right-radius: $radius;
+            padding: toRem(20) 0;
+            @include min-tablet{
+                padding: toRem(36) 0;
+            }
+        }
+        &__list{
+            &__item{
+                color: #999CA5;
+                margin-bottom: toRem(15);
+                @include min-desktop{
+                    margin-bottom: toRem(25);
+                }
+            }
+        }
+    }
+}

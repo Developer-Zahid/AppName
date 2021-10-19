@@ -1,0 +1,54 @@
+/* Community Section Style */
+.community{
+    color: $color-gray--700;
+    background: linear-gradient($color-white--600 98%, transparent 98%);
+    .shape{
+        &--left{
+            bottom: 0;
+            transform: translateX(-40%);
+        }
+        &--right{
+            right: 0;
+            transform: translate(60%, -20%);
+        }
+    }
+    &__quote-slide{
+        &__details{
+            margin-top: toRem(31);
+        }
+        &__avatar{
+            width: toRem(72);
+            height: toRem(72);
+            margin-right: toRem(21);
+        }
+        &__author{
+            font-size: toRem(18);
+            font-weight: 600;
+        }
+    }
+    &__preview{
+        &-slider{
+            @include mobile-xxs{
+                margin-top: toRem(85);
+            }
+            @include min-mobile-xxs{
+                margin-top: toRem(41);
+            }
+        }
+        &-slide{
+            &__image{
+                margin-bottom: toRem(28);
+            }
+            &__avatar{
+                left: 10%;
+                bottom: 10%;
+                width: toRem(76);
+                height: toRem(76);
+                border: 4px solid $color-white;
+            }
+            &__author{
+                font-size: toRem(22);
+            }
+        }
+    }
+}

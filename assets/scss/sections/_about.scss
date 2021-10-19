@@ -1,0 +1,17 @@
+/* About Section Style */
+.about{
+    &__title{
+        font-size: toRem(35);
+        @include min-tablet{
+            font-size: toRem(38);
+        }
+    }
+    &__text{
+        margin: toRem(28) 0 toRem(42);
+    }
+    &__image{
+        @include desktop{
+            max-width: 30rem;
+        }
+    }
+}

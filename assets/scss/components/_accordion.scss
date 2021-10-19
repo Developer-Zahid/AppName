@@ -1,0 +1,54 @@
+/* Accordion's Style */
+.accordion{
+    .card{
+        background-color: $color-white--500;
+        &:not(:last-child){
+            margin-bottom: toRem(10);
+        }
+        &-header{
+            @include mobile{
+                padding-left: toRem(10);
+                padding-right: toRem(5);
+            }
+        }
+        .btn{
+            font-size: toRem(20);
+            font-weight: 600;
+            @include tablet{
+                font-size: toRem(18);
+            }
+            &__icon{
+                width: toRem(18);
+                height: 3px;
+                background-color: $color-primary;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    width: 3px;
+                    height: toRem(18);
+                    background-color: inherit;
+                    @extend %transition;
+                }
+            }
+            &[aria-expanded="true"]{
+                .btn__icon::after{
+                    height: 0;
+                }
+            }
+            &:hover,
+            &:focus{
+                color: $color-secondary;
+            }
+            &:focus-visible{
+                color: $color-primary;
+            }
+        }
+        &-body{
+            padding-bottom: toRem(60);
+            @include min-desktop{
+                padding-left: toRem(32);
+                padding-right: toRem(32);
+            }
+        }
+    }
+}

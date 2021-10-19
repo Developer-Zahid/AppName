@@ -1,0 +1,56 @@
+/* Login Section Style */
+.login{
+    &__image{
+        top: 0;
+        left: 0;
+        height: 100%;
+        @include min-desktop{
+            width: 50%;
+        }
+        @include min-desktop-xl{
+            width: 48%;
+        }
+    }
+    &__content{
+        @include lg-to-xl{
+            padding: 0 2rem;
+        }
+    }
+    &__title,
+    &__text{
+        text-align: center;
+        @include min-desktop-xl{
+            text-align: left;
+        }
+    }
+    &__title,
+    &__form-title{
+        color: $color-secondary;
+        font-size: toRem(40);
+        @include min-desktop-lg{
+            font-size: toRem(45);
+        }
+    }
+    &__text{
+        @include min-desktop-xl{
+            padding-left: 4rem;
+        }
+    }
+    &__text,
+    &__form-text{
+        color: $color-gray--600;
+        font-size: toRem(18);
+    }
+    &__form-text{
+        font-weight: 600;
+    }
+    &__form{
+        margin-top: toRem(45);
+        @include min-desktop-xl{
+            margin-top: toRem(68);
+        }
+    }
+    &__form-footer_text{
+        margin-top: toRem(41);
+    }
+}

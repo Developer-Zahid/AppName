@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'appname-icon';
+  src:  url('fonts/appname-icon.eot?ba7h1n');
+  src:  url('fonts/appname-icon.eot?ba7h1n#iefix') format('embedded-opentype'),
+    url('fonts/appname-icon.ttf?ba7h1n') format('truetype'),
+    url('fonts/appname-icon.woff?ba7h1n') format('woff'),
+    url('fonts/appname-icon.svg?ba7h1n#appname-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="appname-icon-"], [class*=" appname-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'appname-icon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.appname-icon-right:before {
+  content: "\e902";
+}
+.appname-icon-left:before {
+  content: "\e903";
+}
+.appname-icon-clock:before {
+  content: "\e904";
+}
+.appname-icon-up:before {
+  content: "\e901";
+}
+.appname-icon-menu:before {
+  content: "\e900";
+}

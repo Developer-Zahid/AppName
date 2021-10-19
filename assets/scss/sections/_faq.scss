@@ -1,0 +1,7 @@
+/* F.A.Q. Section Style */
+.faq .accordion{
+    margin-top: toRem(35);
+    @include min-desktop{
+        margin-top: toRem(55);
+    }
+}

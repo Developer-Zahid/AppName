@@ -1,0 +1,13 @@
+/* Get Started Section Style */
+.get-start{
+    color: $color-gray--700;
+    background-color: $color-white--600;
+    .section-header__title{
+        @include min-desktop-lg{
+            font-size: toRem(55);
+        }
+    }
+    &__cautious-text{
+        font-size: toRem(12);
+    }
+}

@@ -1,0 +1,42 @@
+/* Form's Section Style */
+.form{
+    &-group{
+        @include min-desktop-xl{
+            margin-bottom: toRem(31);
+        }
+    }
+    &__label{
+        color: $color-black;
+        font-size: toRem(18);
+        @include min-desktop-xl{
+            margin-bottom: toRem(25);
+        }
+    }
+    &-control{
+        border-color: #BBBBBB;
+        border-radius: toRem(10);
+        height: toRem(50);
+        @include min-desktop-xl{
+            height: toRem(75);
+        }
+    }
+    .custom-control{
+        &-label{
+            color: $color-black;
+            font-size: toRem(18);
+            cursor: pointer;
+            padding-left: toRem(30);
+            &::before,
+            &::after{
+                top: initial;
+                width: toRem(35);
+                height: toRem(35);
+            }
+        }
+    }
+    .primary-btn{
+        @include min-desktop-xl{
+            height: toRem(85);
+        }
+    }
+}

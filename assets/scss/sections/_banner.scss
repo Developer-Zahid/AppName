@@ -1,0 +1,86 @@
+/* Banner Section Style */
+.banner{
+    background: rgba($color-white, $alpha: 0.97) url(../images/banner/banner-bg.png) no-repeat center;
+    background-size: cover;
+    background-blend-mode: overlay;
+    padding: toRem(60) 0 toRem(10);
+    @include min-desktop{
+        padding: toRem(10) 0;
+    }
+    @include min-desktop-xl{
+        padding: toRem(90) 0;
+    }
+    .shape{
+        transition: transform 0.6s cubic-bezier(0.5, 1, 0.89, 1);
+        will-change: transform;
+        &--1{
+            top: 65%;
+            left: 2%;
+        }
+        &--2{
+            top: 10%;
+            left: 6%;
+        }
+        &--3{
+            top: 85%;
+            left: 25%;
+        }
+        &--4{
+            top: 15%;
+            left: 35%;
+        }
+        &--5{
+            top: 65%;
+            left: 53%;
+            opacity: 0.4;
+        }
+        &--6{
+            top: 90%;
+            left: 58%;
+        }
+        &--7{
+            top: 80%;
+            left: 92%;
+        }
+        &__image{
+            animation: pulse 2s cubic-bezier(0.5, 1, 0.89, 1) infinite;
+            animation-delay: calc(var(--i)*1s);
+        }
+        @keyframes pulse {
+            0%,100%{
+                transform: scale(1);
+            }
+            50%{
+                transform: scale(1.2);
+            }
+        }
+    }
+    &__title{
+        font-size: toRem(35);
+        font-weight: 600;
+        @include min-tablet{
+            font-size: toRem(50);
+        }
+        @include min-desktop{
+            letter-spacing: toRem(3);
+        }
+        @include min-desktop-lg{
+            font-size: toRem(70);
+            line-height: toRem(80);
+        }
+    }
+    &__text{
+        font-size: toRem(18);
+        margin: toRem(28) 0 toRem(42);
+    }
+    .primary-btn{
+        @include min-mobile{
+            margin-right: toRem(34);
+        }
+    }
+    &__image{
+        @include desktop{
+            max-width: 20rem;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+/* Feature Section Style */
+.feature{
+    &__text{
+        margin-bottom: toRem(35);
+    }
+    &__block{
+        margin-bottom: toRem(55);
+        &__image{
+            @include min-mobile{
+                margin-right: toRem(35);
+            }
+        }
+        &__title{
+            font-size: toRem(19.5);
+        }
+    }
+    &__image{
+        @include desktop{
+            max-width: 20rem;
+        }
+        @include desktop-xl{
+            width: 100%;
+        }
+        @include min-desktop{
+            margin-top: -4rem;
+        }
+    }
+}
