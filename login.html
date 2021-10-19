@@ -49,7 +49,7 @@
 							<a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								Blog
 							</a>
-							<div class="dropdown-menu mt-0 border-0 text-center text-lg-left" aria-labelledby="navbarDropdown">
+							<div class="dropdown-menu mt-0 border-0 text-center text-lg-left mx-auto" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="./blog.html">Blog</a>
 								<a class="dropdown-item" href="./blog-details.html">Blog Details</a>
 							</div>
@@ -81,25 +81,27 @@
 					<div class="login__content">
 						<h2 class="login__form-title font-weight-bold text-center text-lg-left">Welcome Back</h2>
 						<p class="login__form-text text-center text-lg-left">Sign in to continue using "App Name"</p>
-						<form class="login__form form">
-							<div class="form-group">
+						<form class="login__form form needs-validation" novalidate>
+							<div class="form-group position-relative">
 								<label class="form__label" for="email-address">Email address*</label>
 								<input type="email" class="form-control shadow-none" id="email-address" required>
+								<div class="invalid-tooltip">Please provide a valid email.</div>
 							</div>
-							<div class="form-group">
+							<div class="form-group position-relative">
 								<label class="form__label" for="password">Password</label>
-								<input type="password" class="form-control shadow-none" id="password">
+								<input type="password" class="form-control shadow-none" id="password" required>
+								<div class="invalid-tooltip">Please provide your password.</div>
 							</div>
 							<div class="form-group d-sm-flex align-items-center justify-content-between">
-								<div class="custom-control custom-checkbox">
+								<div class="custom-control custom-checkbox mb-3 mb-sm-0">
 									<input type="checkbox" class="custom-control-input" id="customControlInline">
 									<label class="custom-control-label d-flex align-items-center" for="customControlInline">Remember me</label>
 								</div>
-								<a href="#!">Forgot Password?</a>
+								<a href="#!" class="secondary-btn d-inline-block">Forgot Password?</a>
 							</div>
 							<button type="submit" class="primary-btn d-inline-block border-0 w-100">Sign in</button>
 						</form>
-						<p class="login__form-footer_text text-center mb-0">Not a member? <a href="#!">Sign up here.</a></p>	
+						<p class="login__form-footer_text text-center mb-0">Not a member? <a href="#!" class="secondary-btn d-inline-block">Sign up here.</a></p>	
 					</div>
 				</div>
 			</div>
@@ -189,6 +191,7 @@
 	<script src="./assets/js/jquery-1.12.4.min.js"></script>
 	<script src="./assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 	<script src="./assets/plugins/slick-slider/js/slick.js"></script>
+	<script src="./assets/plugins/venobox/js/venobox.min.js"></script>
 	<script src="./assets/js/script.js"></script>
 </body>
 </html>

@@ -1,13 +1,16 @@
 /* Form's Section Style */
 .form{
     &-group{
+        margin-bottom: toRem(25);
         @include min-desktop-xl{
             margin-bottom: toRem(31);
         }
     }
     &__label{
         color: $color-black;
-        font-size: toRem(18);
+        @include min-tablet{
+            font-size: toRem(18);
+        }
         @include min-desktop-xl{
             margin-bottom: toRem(25);
         }
@@ -19,20 +22,75 @@
         @include min-desktop-xl{
             height: toRem(75);
         }
+        &:hover,
+        &:focus{
+            border-color: $color-primary;
+        }
     }
     .custom-control{
         &-label{
             color: $color-black;
             font-size: toRem(18);
             cursor: pointer;
-            padding-left: toRem(30);
+            @include min-tablet{
+                padding-left: toRem(20);
+            }
+            @include min-desktop-xl{
+                padding-left: toRem(30);
+            }
             &::before,
             &::after{
                 top: initial;
-                width: toRem(35);
-                height: toRem(35);
+                @include min-tablet{
+                    width: toRem(25);
+                    height: toRem(25);
+                }
+                @include min-desktop-xl{
+                    width: toRem(35);
+                    height: toRem(35);
+                }
+            }
+            &:hover{
+                &::before{
+                    border-color: $color-primary;
+                }
             }
         }
+        &-input{
+            &:focus ~ .custom-control-label::before{
+                box-shadow: none;
+                border-color: $color-primary;
+            }
+            &:checked,
+            &:active{
+                & ~ .custom-control-label::before{
+                    background-color: $color-primary;
+                    border-color: $color-primary;
+                }
+            }
+        }
+    }
+    &.was-validated{
+        .custom-control-input{
+            &:focus ~ .custom-control-label::before{
+                box-shadow: none;
+                border-color: $color-primary !important;
+            }
+            &:valid{
+                & ~ .custom-control-label{
+                    color: $color-black;
+                    &::before{
+                        border-color: $color-primary;
+                    }
+                }
+                &:checked ~ .custom-control-label::before{
+                    background-color: $color-primary;
+                }
+            }
+            }
+    }
+    .secondary-btn{
+        font-size: toRem(18);
     }
     .primary-btn{
         @include min-desktop-xl{

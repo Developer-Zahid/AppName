@@ -26,7 +26,10 @@
     &__title,
     &__form-title{
         color: $color-secondary;
-        font-size: toRem(40);
+        font-size: toRem(30);
+        @include min-tablet{
+            font-size: toRem(40);
+        }
         @include min-desktop-lg{
             font-size: toRem(45);
         }
@@ -39,7 +42,9 @@
     &__text,
     &__form-text{
         color: $color-gray--600;
-        font-size: toRem(18);
+        @include min-tablet{
+            font-size: toRem(18);
+        }
     }
     &__form-text{
         font-weight: 600;
@@ -51,6 +56,7 @@
         }
     }
     &__form-footer_text{
+        font-size: toRem(18);
         margin-top: toRem(41);
     }
 }

@@ -7,6 +7,22 @@
 		headerHeightFixer();
     });
 
+	/* Bootstrap form validation init */
+	window.addEventListener('load', function() {
+		// Fetch all the forms we want to apply custom Bootstrap validation styles to
+		var forms = document.getElementsByClassName('needs-validation');
+		// Loop over them and prevent submission
+		var validation = Array.prototype.filter.call(forms, function(form) {
+		  form.addEventListener('submit', function(event) {
+			if (form.checkValidity() === false) {
+			  event.preventDefault();
+			  event.stopPropagation();
+			}
+			form.classList.add('was-validated');
+		  }, false);
+		});
+	}, false);
+
 	/* Preloader init */
 	function preLoader(){
 		$(".preloader").delay(1000).fadeOut("slow");
@@ -25,7 +41,7 @@
 
 	/* scroll top */
 	$(".scroll-top").on("click", function () {
-		$("html,body").animate({scrollTop: 0},500);
+		$("html,body").animate({scrollTop: 0},100);
 	});
 	$(window).on("scroll", function () {
 		var scrolling = $(this).scrollTop();
@@ -120,12 +136,10 @@
 		]
     });
 
-    /* veno box */
-    // $('.venobox').venobox({
-    //     bgcolor    : '#ffffff',
-    //     spinner    : 'three-bounce',
-    //     border     : '10px',
-    //     frameheight: '82vh',
-    // });
+    /* veno box init */
+    $('.venobox').venobox({
+        bgcolor: '#ffffff',
+        spinner: 'three-bounce',
+    });
 
 })(jQuery);

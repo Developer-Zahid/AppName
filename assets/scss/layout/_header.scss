@@ -62,8 +62,9 @@
 						}
 					}
 					&-menu{
-						min-width: toRem(150);
+						max-width: toRem(150);
 						background-color: $color-primary--light;
+						padding: toRem(5);
 						@extend %transition;
 						@include min-desktop{
 							display: block;
@@ -74,6 +75,7 @@
 						}
 					}
 					&-item{
+						border-radius: inherit;
 						color: $color-white;
 						@extend %transition;
 						&.active,
@@ -81,7 +83,7 @@
 						&:hover,
 						&:focus{
 							color: $color-secondary;
-							background-color: transparent;
+							background-color: $color-white;
 						}
 					}
 				}

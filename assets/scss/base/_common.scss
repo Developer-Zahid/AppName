@@ -21,6 +21,17 @@ body{
 html{
 	font-size: 16px;
 	text-size-adjust: none;
+	scrollbar-width: thin;
+	scrollbar-color: $color-primary--light $color-white;
+	&::-webkit-scrollbar{
+		width: 8px;
+	}
+	&::-webkit-scrollbar-thumb{
+		background-color: $color-primary--light;
+	}
+	&::-webkit-scrollbar-track{
+		background-color: $color-white;
+	}
 }
 
 body {
@@ -76,63 +87,30 @@ img{
 	}
 }
 
-/* Common Slick Style */
-.slick{
-	&__arrows{
-		position: absolute;
-		bottom: 0;
-		@include mobile-xxs{
-			transform: translateY(150%);
-		}
-		@include min-mobile-xxs{
-			transform: translateY(-50%);
-		}
-		z-index: 3;
-		width: toRem(40);
-		height: toRem(40);
-		color: lighten($color-gray--500, $amount: 40);
-		background-color: $color-white;
-		font-size: toRem(12);
-		text-align: center;
-		cursor: pointer;
-		@extend %transition;
-		&--left{
-			right: toRem(52);
-		}
-		&--right{
-			right: 0;
-		}
-		&:hover,
-		&:focus{
-			color: $color-primary--light;
-			background-color: lighten($color-gray--light, $amount: 18);
+/* Veno Box Style */
+.vbox{
+	&-container{
+		scrollbar-width: none;
+		&::-webkit-scrollbar{
+			width: 0;
 		}
 	}
-	&-dots{
+	&-close{
+		top: 2%;
+		right: 2%;
+		width: 4rem;
+		height: 4rem;
+		border-radius: 50%;
+		padding: 0;
 		display: flex;
+		align-items: center;
 		justify-content: center;
-		margin-bottom: 0;
-		line-height: 0;
-		li{
-			&:not(:last-child){
-				margin-right: 1rem;
-			}
-			button{
-				font-size: 0;
-				width: toRem(8);
-				height: toRem(8);
-				background: $color-primary;
-				border: 1px solid $color-primary;
-				border-radius: toRem(8);
-				@extend %transition;
-			}
-			&.slick-active{
-				button{
-					width: toRem(16);
-					background: transparent;
-				}
-			}
-		}
+		font-size: 3rem;
+		background: $color-danger !important;
+		color: $color-white !important;
+	}
+	&-preloader .sk-child{
+		background: $color-primary--light !important;
 	}
 }
 
