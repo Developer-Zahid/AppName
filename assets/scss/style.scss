@@ -1,16 +1,44 @@
 /* 
 ------------------
 Template Name: AppName | App Landing Page Template
+Author: Developer Zahid
+Author Website: https://developer-zahid-portfolio.netlify.app
+Author Email: coderexpertzahid@gmail.com
 Version: 1.00
 ------------------
 
 ----------------
-Table of Content
+Table of CSS Content
 ----------------
 
 1.Google Fonts Link
-2.Typography Reset
-3.Reset CSS
+2.Custom Icons Link
+3.Typography Reset
+4.Reset CSS
+5.Custom Container Style
+6.Veno Box Style
+7.Preloader Section Style
+8.Common Section Gap Style
+9.Common Section Heading Style
+10.Common Color's Style
+11.Common Transition Style
+12.Common Button's Style
+13.Accordion's Style
+14.Form's Section Style
+15.Header Section Style
+16.Parallax Banner Section Style
+17.Banner Section Style
+18.Sub Banner Section Style
+19.About Section Style
+20.Feature Section Style
+21.Community Section Style
+22.Pricing Section Style
+23.F.A.Q. Section Style
+24.Get Started Section Style
+25.Login Section Style
+26.Blog Section Style
+27.Blog Details Section Style
+28.Footer Section Style
 
 ------------------
 */
@@ -25,7 +53,9 @@ Table of Content
 @import "./components/accordion";
 @import "./components/forms";
 @import "./layout/header";
+@import "./sections/parallax-banner";
 @import "./sections/banner";
+@import "./sections/sub-banner";
 @import "./sections/about";
 @import "./sections/feature";
 @import "./sections/community";
@@ -33,4 +63,6 @@ Table of Content
 @import "./sections/faq";
 @import "./sections/get-start";
 @import "./pages/login";
+@import "./sections/blogs";
+@import "./pages/blog-details";
 @import "./layout/footer";

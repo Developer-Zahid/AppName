@@ -1,0 +1,47 @@
+/* Sub Banner Section Style */
+.sub-banner{
+    padding: toRem(160) 0 toRem(110);
+    &__canvas,
+    .parallax-banner{
+        top: 0;
+        left: 0;
+        clip-path: ellipse(100% 100% at 50% 0%)
+    }
+    &__canvas{
+        background-color: $color-normal;
+    }
+    .parallax-banner{
+        .shape{
+            &--1{
+                top: 70%;
+                left: 14%;
+            }
+            &--2{
+                top: 48%;
+                left: 20%;
+                @include min-tablet{
+                    left: 32%;
+                }
+            }
+            &--3{
+                top: 44%;
+                left: 69%;
+            }
+            &--4{
+                top: 22%;
+                left: 80%;
+                @include min-tablet{
+                    top: 40%;
+                    left: 95%;
+                }
+                @include min-desktop-xxl{
+                    left: 85%;
+                }
+            }
+        }
+    }
+    &__title{
+        color: $color-white;
+        font-size: toRem(38);
+    }
+}

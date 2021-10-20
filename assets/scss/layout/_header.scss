@@ -75,6 +75,9 @@
 						}
 					}
 					&-item{
+						&:not(:last-child){
+							margin-bottom: toRem(5);
+						}
 						border-radius: inherit;
 						color: $color-white;
 						@extend %transition;
@@ -110,9 +113,12 @@
 								opacity: 1;
 								visibility: visible;
 							}
-							.nav-link{
-								color: $color-primary;
-							}
+						}
+					}
+					&:hover,
+					&:focus{
+						.nav-link{
+							color: $color-primary;
 						}
 					}
 				}
@@ -134,11 +140,64 @@
 				&:focus{
 					color: $color-primary;
 				}
+				&:focus ~ .dropdown-menu{
+					@include min-desktop{
+						transform: translateY(28%);
+						opacity: 1;
+						visibility: visible;
+					}
+				}
 			}
 		}
 	}
 	&--primary{
 		background-color: $color-white;
+	}
+	&--secondary{
+		.navbar{
+			&-toggler{
+				color: $color-white;
+				&:hover{
+					color: $color-white;
+				}
+				&[aria-expanded="true"]{
+					color: $color-danger;
+				}
+			}
+			@include min-desktop{
+				.nav{
+					&-item{
+						&.dropdown{
+							&:hover,
+							&:focus{
+								.nav-link{
+									color: $color-gray--900;
+								}
+							}
+						}
+						.primary-btn{
+							border: 2px solid $color-white;
+							&:hover,
+							&:focus{
+								color: $color-secondary;
+								background-color: $color-white;
+							}
+						}
+					}
+					&-link{
+						color: $color-white;
+						&.active,
+						&:hover,
+						&:focus{
+							color: $color-gray--900;
+						}
+					}
+				}
+			}
+		}
+		&.header--fixed{
+			background-color:$color-secondary;
+		}
 	}
 	&--fixed{
 		position: fixed;

@@ -60,6 +60,25 @@
 	}
 }
 
+.tag-btn{
+	color: $color-white;
+	font-size: toRem(14);
+	padding: toRem(10) toRem(15);
+	@extend %transition;
+	&--pill{
+		background-color: $color-gray--600-dark;
+	}
+	&--rounded{
+		background-color: $color-normal;
+		border-radius: toRem(5);
+	}
+	&:hover,
+	&:focus{
+		color: $color-white;
+		background-color: $color-secondary;
+	}
+}
+
 .scroll-top{
 	bottom: 3%;
 	right: 1%;

@@ -1,0 +1,105 @@
+/* Blog Section Style */
+.blog{
+    &__card{
+        $radius: toRem(5);
+        margin-bottom: toRem(35);
+        &__image{
+            @extend %transition;
+        }
+        &__head{
+            border-radius: $radius $radius 0 0;
+            &:hover,
+            &:focus{
+                .blog__card__image{
+                    transform: scale(1.1);
+                    filter: grayscale(0.4);
+                }
+            }
+        }
+        &__body{
+            padding: toRem(23) toRem(15);
+            box-shadow: 0 0 toRem(99) rgba($color-black, $alpha: 0.08);
+            border-radius: 0 0 $radius $radius;
+            @include min-tablet{
+                padding: toRem(23) toRem(20);
+            }
+            @include min-desktop-lg{
+                padding: toRem(23) toRem(36);
+            }
+        }
+        &__title{
+            color: $color-gray--300;
+            font-size: toRem(22);
+            font-weight: 600;
+            &__link{
+                @extend %transition;
+                &:hover,
+                &:focus{
+                    color: $color-primary;
+                }
+            }
+        }
+        &__meta{
+            margin-top: toRem(12);
+            margin-bottom: toRem(22);
+            &__time{
+                color: $color-primary--soft;
+                font-weight: 500;
+                &__icon{
+                    font-size: toRem(22);
+                }
+            }
+            > *{
+                margin-top: toRem(10);
+            }
+        }
+        &__authore{
+            &__avatar{
+                width: toRem(70);
+                height: toRem(70);
+                margin-right: toRem(10);
+                @include min-mobile{
+                    margin-right: toRem(22);
+                }
+            }
+            &__name{
+                color: $color-gray--300;
+                font-size: toRem(18);
+                &__link{
+                    &:hover,
+                    &:focus{
+                        text-decoration: underline;
+                    }
+                }
+            }
+            &__role{
+                color: $color-gray--700;
+                font-size: toRem(13);
+            }
+        }
+        &--horizontal{
+            .blog__card{
+                &__head{
+                    @include min-tablet{
+                        border-radius: $radius 0 0 $radius;
+                    }
+                }
+                &__title{
+                    color: $color-secondary;
+                    @include min-desktop{
+                        font-size: toRem(25);
+                        margin-bottom: toRem(35);
+                    }
+                }
+                &__body{
+                    @include min-tablet{
+                        border-radius: 0 $radius $radius 0;
+                    }
+                    @include min-desktop{
+                        padding: toRem(40) toRem(45);
+                    }
+                }
+            }
+        }
+    }
+}

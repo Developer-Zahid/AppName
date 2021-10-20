@@ -79,67 +79,148 @@
     });
 
 	/* Banner Animation function */
-	$(".banner").on("mousemove", function (position) {
-		let moveX = position.pageX / 30;
-		let moveY = position.pageY / 30;
-		$(".banner .shape").css({
-			"transform": `translateX(${moveX}px) translateY(${moveY}px)`
+	$(".parallax-banner").on("mousemove", function (parallaxMove) {
+		const parallaxX = parallaxMove.pageX / 30;
+		const parallaxY = parallaxMove.pageY / 15;
+		$(".parallax-banner .shape").css({
+			"transform": `translateX(${parallaxX}px) translateY(${parallaxY}px)`
 		})
 	});
 
-    /*  Community quote slider */
-    $(".community__quote-slider").slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        speed: 500,
-        arrows: true,
-        prevArrow: '<button class="slick__arrows slick__arrows--left border-0 rounded-circle d-inline-flex align-items-center justify-content-center position-absolute"><span class="appname-icon-left"></span></button>',
-		nextArrow: '<button class="slick__arrows slick__arrows--right border-0 rounded-circle d-inline-flex align-items-center justify-content-center position-absolute"><span class="appname-icon-right"></span></button>',
-        dots: false,
-        pauseOnHover: false,
-        pauseOnFocus: false,
-        infinite: true,
-		fade: true,
-  		cssEase: 'linear',
-		asNavFor: '.community__preview-slider'
-    });
+	/* Veno box init */
+	(function(){
+		$('.venobox').venobox({
+			bgcolor: '#ffffff',
+			spinner: 'three-bounce',
+		});
+	})();
 
-    /*  Community preview slider */
-    $(".community__preview-slider").slick({
-		asNavFor: '.community__quote-slider',
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        speed: 500,
-        arrows: false,
-        dots: false,
-		centerMode: true,
-		centerPadding: '0px',
-        pauseOnHover: false,
-        pauseOnFocus: false,
-		focusOnSelect: true,
-        infinite: true,
-		responsive: [
+	/* Community quote slider */
+	(function(){
+		$(".community__quote-slider").slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 3000,
+			speed: 500,
+			arrows: true,
+			prevArrow: '<button class="slick__arrows slick__arrows--left border-0 rounded-circle d-inline-flex align-items-center justify-content-center position-absolute"><span class="appname-icon-left"></span></button>',
+			nextArrow: '<button class="slick__arrows slick__arrows--right border-0 rounded-circle d-inline-flex align-items-center justify-content-center position-absolute"><span class="appname-icon-right"></span></button>',
+			dots: false,
+			pauseOnHover: false,
+			pauseOnFocus: false,
+			infinite: true,
+			fade: true,
+			  cssEase: 'linear',
+			asNavFor: '.community__preview-slider'
+		});
+	})();
+    
+	/* Community preview slider */
+	(function(){
+		$(".community__preview-slider").slick({
+			asNavFor: '.community__quote-slider',
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			speed: 500,
+			arrows: false,
+			dots: false,
+			centerMode: true,
+			centerPadding: '0px',
+			pauseOnHover: false,
+			pauseOnFocus: false,
+			focusOnSelect: true,
+			infinite: true,
+			responsive: [
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2,
+					}
+				},
+				{
+					breakpoint: 576,
+					settings: {
+						slidesToShow: 1,
+					}
+				},
+			]
+		});
+	})();
+
+	/* Particles JS init */
+	(function(){
+		particlesJS('sub-banner__canvas',
 			{
-				breakpoint: 768,
-				settings: {
-					slidesToShow: 2,
-				}
-			},
-			{
-				breakpoint: 576,
-				settings: {
-					slidesToShow: 1,
-				}
-			},
-		]
-    });
-
-    /* veno box init */
-    $('.venobox').venobox({
-        bgcolor: '#ffffff',
-        spinner: 'three-bounce',
-    });
-
+				"particles": {
+					"number": {
+						"value": 50,
+						"density": {
+							"enable": true,
+							"value_area": 800
+						}
+					},
+					"color": {
+						"value": "#ffffff"
+					},
+					"shape": {
+						"type": "circle",
+						"stroke": {
+							"width": 0,
+						}
+					},
+					"opacity": {
+						"value": 0.2,
+						"random": true,
+						"anim": {
+							"enable": false,
+						}
+					},
+					"size": {
+						"value": 12,
+						"random": true,
+						"anim": {
+							"enable": true,
+							"speed": 6,
+							"size_min": 0.5,
+						}
+					},
+					"line_linked": {
+						"enable": true,
+						"distance": 150,
+						"color": "#ffffff",
+						"opacity": 0.2,
+						"width": 1
+					},
+					"move": {
+						"enable": true,
+						"speed": 2,
+						"direction": "none",
+					}
+				},
+				"interactivity": {
+					"detect_on": "canvas",
+					"events": {
+						"onhover": {
+							"enable": true,
+							"mode": "repulse"
+						},
+						"onclick": {
+							"enable": false,
+						},
+						"resize": true
+					},
+					"modes": {
+						"repulse": {
+							"distance": 10
+						},
+						"remove": {
+							"particles_nb": 20
+						}
+					}
+				},	
+			}
+		);
+	})();
+	
 })(jQuery);

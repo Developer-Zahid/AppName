@@ -1,0 +1,19 @@
+/* Parallax Banner Section Style */
+.parallax-banner{
+    .shape{
+        transition: transform 0.8s cubic-bezier(0.5, 1, 0.89, 1) 0s;
+        will-change: transform;
+        &__image{
+            animation: pulse 3s linear infinite;
+            animation-delay: calc(var(--i)*1s);
+        }
+        @keyframes pulse {
+            0%,100%{
+                transform: scale(0.8);
+            }
+            50%{
+                transform: scale(1.2);
+            }
+        }
+    }
+}

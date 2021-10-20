@@ -1,0 +1,43 @@
+/* Blog Details Section Style */
+.blog-details{
+    &__card{
+        color: $color-gray--700;
+        &__image{
+            border-radius: toRem(5);
+        }
+        &__title{
+            color: $color-secondary;
+            font-size: toRem(32);
+            font-weight: 600;
+            &__link{
+                @extend %transition;
+                &:hover,
+                &:focus{
+                    color: $color-primary;
+                }
+            }
+        }
+        &__list{
+            @include min-tablet{
+                margin: toRem(55) 0;
+            }
+            &__item{
+                padding-left: toRem(15);
+                &:not(:last-child){
+                    margin-bottom: toRem(15);
+                }
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translate(-100%, -50%);
+                    width: toRem(14);
+                    height: toRem(14);
+                    border-radius: 50%;
+                    background-color: $color-normal;
+                }
+            }
+        }
+    }
+}
